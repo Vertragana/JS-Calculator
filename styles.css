@@ -3,6 +3,7 @@
 }
 
 .main-field {
+  display: block;
   background-color: black;
   width: 400px;
   color: white;
@@ -10,18 +11,30 @@
 
 .input-field {
   font-family: monospace;
+  font-size: 40px;
   text-align: right;
-  height: 40px;
+  height: 90px;
+  padding: 20px 5px;
 }
 
 .button-row {
   display: flex;
   justify-content: space-between;
-  height: 50px;
+  height: 100px;
+}
+
+.button-row :last-child {
+  background-color: orange;
+  color: aliceblue;
 }
 
 .button {
   width: 24.5%;
+  background-color: rgb(138, 138, 138);
+  font-family: "Courier New", Courier, monospace;
+  text-align: center;
+  font-weight: bold;
+  font-size: 30px;
 }
 
 .double {
