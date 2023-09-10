@@ -1,0 +1,33 @@
+* {
+  box-sizing: border-box;
+}
+
+.main-field {
+  background-color: black;
+  width: 400px;
+  color: white;
+}
+
+.input-field {
+  font-family: monospace;
+  text-align: right;
+  height: 40px;
+}
+
+.button-row {
+  display: flex;
+  justify-content: space-between;
+  height: 50px;
+}
+
+.button {
+  width: 24.5%;
+}
+
+.double {
+  width: 50%;
+}
+
+.triple {
+  width: 75%;
+}
