@@ -28,6 +28,9 @@
   color: aliceblue;
 }
 
+.button-row :last-child:hover {
+  background-color: rgb(255, 195, 110);
+}
 .button {
   width: 24.5%;
   background-color: rgb(138, 138, 138);
@@ -35,6 +38,10 @@
   text-align: center;
   font-weight: bold;
   font-size: 30px;
+}
+
+.button:hover {
+  background-color: rgb(235, 233, 216);
 }
 
 .double {
