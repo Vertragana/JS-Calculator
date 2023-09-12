@@ -32,16 +32,11 @@ operationButtons.forEach((button) => {
 
 function calc() {
   b = parseInt(inputFieldEl.innerHTML);
-  switch (operation) {
-    case "sum":
-      inputFieldEl.innerHTML = a + b;
-      break;
+  if (operation === 'sum') {
+    inputFieldEl.innerHTML = a+b
+  } else if (operation ==='sub') {
 
-    default:
-      break;
   }
 }
 
-calcButton.addEventListener("click", () => {
-  calc();
-});
+calcButton.addEventListener("click",calc);
