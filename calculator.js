@@ -27,7 +27,12 @@ function saveOperation(e) {
 }
 
 operationButtons.forEach((button) => {
-  button.addEventListener("click", saveOperation);
+  button.addEventListener("click",(e)=>{
+    if (operation){
+     calc();
+    }
+    saveOperation(e);
+  } );
 });
 
 function calc() {
@@ -41,20 +46,22 @@ function calc() {
   } else if(operation === 'div'){
     inputFieldEl.innerHTML = a/b
   }
+  operation = undefined
 }
 
 calcButton.addEventListener("click",calc);
 
-clearButton.addEventListener("click",(e) =>{
+clearButton.addEventListener("click",() =>{
   inputFieldEl.innerHTML = 0;
+  a=b=operation=undefined;
 })
 
 
 
-backButton.addEventListener("click", (e) =>{
- if(inputFieldEl.innerHTML.length === 2) {
+backButton.addEventListener("click", () =>{
+ if(inputFieldEl.innerHTML.length === 1) {
   inputFieldEl.innerHTML = 0;
  }
-else {inputFieldEl.innerHTML = inputFieldEl.innerHTML.slice(0, inputFieldEl.innerHTML.length - 2 );}
+else {inputFieldEl.innerHTML = inputFieldEl.innerHTML.slice(0, inputFieldEl.innerHTML.length - 1 );}
   
 })
