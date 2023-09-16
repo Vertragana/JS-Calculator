@@ -27,21 +27,41 @@ function saveOperation(e) {
 }
 
 operationButtons.forEach((button) => {
-  button.addEventListener("click", saveOperation);
+  button.addEventListener("click",(e)=>{
+    if (operation){
+     calc();
+    }
+    saveOperation(e);
+  } );
 });
 
 function calc() {
   b = parseInt(inputFieldEl.innerHTML);
-  switch (operation) {
-    case "sum":
-      inputFieldEl.innerHTML = a + b;
-      break;
-
-    default:
-      break;
+  if (operation === 'sum') {
+    inputFieldEl.innerHTML = a+b
+  } else if (operation ==='sub') {
+    inputFieldEl.innerHTML = a-b
+  } else if(operation === 'multi'){
+    inputFieldEl.innerHTML = a*b
+  } else if(operation === 'div'){
+    inputFieldEl.innerHTML = a/b
   }
+  operation = undefined
 }
 
-calcButton.addEventListener("click", () => {
-  calc();
-});
+calcButton.addEventListener("click",calc);
+
+clearButton.addEventListener("click",() =>{
+  inputFieldEl.innerHTML = 0;
+  a=b=operation=undefined;
+})
+
+
+
+backButton.addEventListener("click", () =>{
+ if(inputFieldEl.innerHTML.length === 1) {
+  inputFieldEl.innerHTML = 0;
+ }
+else {inputFieldEl.innerHTML = inputFieldEl.innerHTML.slice(0, inputFieldEl.innerHTML.length - 1 );}
+  
+})
